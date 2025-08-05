@@ -18,9 +18,6 @@ Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo
 vacía.*/
 const amigos = [];
 function agregarAmigo() {
-    const input = document.getElementById('amigo'); // Obtener el campo de entrada
-
-function agregarAmigo() {
     const input = document.getElementById('nombreAmigo'); // Obtener el campo de entrada
     const nombre = input.value.trim(); // Eliminar espacios al inicio y al final
 
@@ -50,7 +47,7 @@ function mostrarAmigos() {
     });
 }
 //De la lista ingresada, se seleccionará un amigo al azar para el juego de amigo secreto
-    function sortearAmigo() {
+function sortearAmigo() {
     if (amigos.length === 0) {
         alert('No hay amigos para seleccionar.');
         return;
@@ -59,5 +56,4 @@ function mostrarAmigos() {
     const indiceAleatorio = Math.floor(Math.random() * amigos.length); // Generar un índice aleatorio
     const amigoSecreto = amigos[indiceAleatorio]; // Seleccionar el amigo secreto
     alert(`Tu amigo secreto es: ${amigoSecreto}`); // Mostrar el amigo secreto
-    }
 }
