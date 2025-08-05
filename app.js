@@ -25,7 +25,10 @@ function agregarAmigo() {
         alert('Por favor, escribe un nombre.'); 
         return; 
     }
-
+    if (amigos.includes(nombre)) { // Validar si el nombre ya existe
+        alert('Este nombre ya está en la lista. Por favor, escribe un nombre diferente.');
+        return;
+    }
     amigos.push(nombre);    // Agregar el nombre al array de amigos
     input.value = ''; // Limpiar el campo de entrada
     mostrarAmigos(); // Actualizar la lista de amigos
@@ -67,3 +70,4 @@ function sortearAmigoSecreto() {
     const resultado = document.getElementById('resultado'); // Obtener el elemento de resultado
     resultado.innerHTML = `<li>Tu amigo secreto es: <strong>${amigoSorteado}</strong></li>`; // Mostrar el resultado
 }
+
