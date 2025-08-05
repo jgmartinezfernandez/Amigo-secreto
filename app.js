@@ -46,14 +46,27 @@ function mostrarAmigos() {
         amigosList.appendChild(li); 
     });
 }
-//De la lista ingresada, se seleccionará un amigo al azar para el juego de amigo secreto
-function sortearAmigo() {
-    if (amigos.length === 0) {
-        alert('No hay amigos para seleccionar.');
+/*Tareas específicas:
+
+Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
+
+Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice 
+aleatorio del arreglo.
+
+Obtener el nombre sorteado: Utilizar el índice aleatorio para acceder al nombre correspondiente 
+en el arreglo.
+
+Mostrar el resultado: Actualizar el contenido del elemento de resultado utilizando 
+document.getElementById()  e innerHTML para mostrar el amigo sorteado. */
+function sortearAmigoSecreto() {
+    if (amigos.length === 0) { // Validar si hay amigos disponibles
+        alert('No hay amigos para sortear. Por favor, añade algunos primero.');
         return;
     }
 
     const indiceAleatorio = Math.floor(Math.random() * amigos.length); // Generar un índice aleatorio
-    const amigoSecreto = amigos[indiceAleatorio]; // Seleccionar el amigo secreto
-    alert(`Tu amigo secreto es: ${amigoSecreto}`); // Mostrar el amigo secreto
+    const amigoSorteado = amigos[indiceAleatorio]; // Obtener el nombre sorteado
+
+    const resultado = document.getElementById('resultado'); // Obtener el elemento de resultado
+    resultado.innerHTML = `<li>Tu amigo secreto es: <strong>${amigoSorteado}</strong></li>`; // Mostrar el resultado
 }
