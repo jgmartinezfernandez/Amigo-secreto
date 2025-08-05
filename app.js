@@ -47,6 +47,7 @@ function mostrarAmigos() {
     });
 }
 /*Tareas específicas:
+
 Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
 Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice 
 aleatorio del arreglo.
